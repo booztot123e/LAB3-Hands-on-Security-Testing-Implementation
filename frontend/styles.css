@@ -1,0 +1,173 @@
+/* frontend/styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.warning {
+    background: rgba(255, 193, 7, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 2px solid #ffc107;
+}
+
+.section {
+    background: white;
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    color: #e74c3c;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #e74c3c;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #c0392b;
+}
+
+/* Hint Box */
+.hint {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.hint p {
+    margin-bottom: 5px;
+}
+
+.hint code {
+    background: #f8f9fa;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    color: #e83e8c;
+}
+
+/* Results */
+#login-result,
+#profile-result,
+#search-results,
+#comments-display {
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.success {
+    background: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724;
+}
+
+.error {
+    background: #f8d7da !important;
+    border-color: #f5c6cb !important;
+    color: #721c24;
+}
+
+/* Comments */
+.comment {
+    background: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 3px solid #e74c3c;
+    border-radius: 0 5px 5px 0;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.comment-content {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.comment-date {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .section {
+        padding: 15px;
+    }
+}

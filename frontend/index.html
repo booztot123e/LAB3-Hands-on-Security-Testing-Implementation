@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Lab - Vulnerable App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚨 Security Lab - Vulnerable Application</h1>
+            <p class="warning">⚠️ This app has intentional security vulnerabilities for educational purposes</p>
+        </header>
+
+        <!-- Login Section -->
+        <section class="section" id="login-section">
+            <h2>🔐 Login (SQL Injection Vulnerable)</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <div class="hint">
+                <p><strong>Hint for SQL Injection:</strong></p>
+                <p>Try: <code>admin'; --</code> as username</p>
+                <p>Or: <code>' OR '1'='1'; --</code></p>
+            </div>
+            <div id="login-result"></div>
+        </section>
+
+        <!-- User Profile Section -->
+        <section class="section" id="profile-section" style="display: none;">
+            <h2>👤 User Profile (IDOR Vulnerable)</h2>
+            <p>Current User ID: <span id="current-user-id"></span></p>
+            <input type="number" id="user-id-input" placeholder="Enter User ID (1, 2, 3)" min="1" max="10">
+            <button onclick="fetchUserProfile()">Get User Profile</button>
+            <div class="hint">
+                <p><strong>Hint for IDOR:</strong></p>
+                <p>Try accessing other user IDs (1, 2, 3)</p>
+            </div>
+            <div id="profile-result"></div>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="section">
+            <h2>💬 Comments (XSS Vulnerable)</h2>
+            <div id="user-info" style="display: none;">
+                <input type="hidden" id="current-user-id-hidden">
+                <form id="comment-form">
+                    <textarea id="comment-content" placeholder="Write your comment..." rows="3" required></textarea>
+                    <button type="submit">Add Comment</button>
+                </form>
+                <div class="hint">
+                    <p><strong>Hint for XSS:</strong></p>
+                    <p>Try: <code>&lt;script&gt;alert('XSS!')&lt;/script&gt;</code></p>
+                    <p>Or: <code>&lt;img src=x onerror=alert('XSS')&gt;</code></p>
+                </div>
+            </div>
+            <div id="comments-display"></div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="section">
+            <h2>🔍 Product Search (SQL Injection Vulnerable)</h2>
+            <input type="text" id="search-input" placeholder="Search products...">
+            <button onclick="searchProducts()">Search</button>
+            <div class="hint">
+                <p><strong>Hint for SQL Injection:</strong></p>
+                <p>Try: <code>'; DROP TABLE Products; --</code></p>
+                <p>Or: <code>' UNION SELECT id,username,password FROM Users; --</code></p>
+            </div>
+            <div id="search-results"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

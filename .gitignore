@@ -1,0 +1,20 @@
+@"
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/coverage/
+backend/dist/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+"@ | Out-File -Encoding utf8 .gitignore
